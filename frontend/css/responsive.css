@@ -1,0 +1,273 @@
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 0;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .nav-right {
+    order: 2;
+    gap: 0.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 0 1rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .section h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .game-grid,
+  .asset-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .filter-section {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    min-width: auto;
+  }
+
+  .studio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .community-container {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .nav-menu {
+    font-size: 0.9rem;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .user-info {
+    gap: 0.5rem;
+  }
+
+  .robux {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.25rem;
+  }
+
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .game-grid,
+  .asset-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .game-thumbnail,
+  .asset-thumbnail {
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .game-info,
+  .asset-info {
+    padding: 1rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .close {
+    font-size: 1.5rem;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-bar,
+  .filter-dropdown {
+    padding: 0.5rem;
+  }
+
+  .my-games-panel,
+  .studio-tools,
+  .social-feed,
+  .leaderboard-panel {
+    padding: 1rem;
+  }
+
+  .post-card {
+    padding: 1rem;
+  }
+
+  .game-item {
+    padding: 0.75rem;
+  }
+
+  .tool-icon {
+    font-size: 2rem;
+  }
+
+  .tool-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .tool-card p {
+    font-size: 0.75rem;
+  }
+
+  .leaderboard-rank {
+    font-size: 1.2rem;
+    min-width: 25px;
+  }
+
+  .leaderboard-rank.top {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+  }
+
+  .game-grid,
+  .asset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-toggle {
+    gap: 0.5rem;
+  }
+
+  .toggle-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}

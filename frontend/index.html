@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitByteLabs - Gaming Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="logo">
+          <span class="logo-icon">🎮</span>
+          <span class="logo-text">BitByteLabs</span>
+        </div>
+        <div class="nav-menu">
+          <a href="#home" class="nav-link" onclick="navigateTo('home')">Home</a>
+          <a href="#games" class="nav-link" onclick="navigateTo('games')">Games</a>
+          <a href="#assets" class="nav-link" onclick="navigateTo('assets')">Asset Store</a>
+          <a href="#create" class="nav-link" onclick="navigateTo('create')">Create</a>
+          <a href="#community" class="nav-link" onclick="navigateTo('community')">Community</a>
+        </div>
+        <div class="nav-right">
+          <div id="user-info" class="user-info">
+            <span id="robux-display" class="robux">💰 0</span>
+            <button id="auth-btn" class="btn-primary" onclick="openAuthModal()">Login</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home-page" class="page active">
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1>Welcome to BitByteLabs</h1>
+          <p>Create, Play, and Share Games. Imagine a world where everyone could build games.</p>
+          <div class="hero-buttons">
+            <button class="btn-primary btn-lg" onclick="navigateTo('games')">Browse Games</button>
+            <button class="btn-secondary btn-lg" onclick="openAuthModal()">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Games -->
+      <section class="section">
+        <h2>Featured Games</h2>
+        <div id="featured-games" class="game-grid">
+          <!-- Games loaded here -->
+        </div>
+      </section>
+
+      <!-- Platform Stats -->
+      <section class="section stats-section">
+        <div class="stat-card">
+          <h3>10M+</h3>
+          <p>Active Players</p>
+        </div>
+        <div class="stat-card">
+          <h3>500K+</h3>
+          <p>Games Created</p>
+        </div>
+        <div class="stat-card">
+          <h3>1M+</h3>
+          <p>Assets Available</p>
+        </div>
+        <div class="stat-card">
+          <h3>24/7</h3>
+          <p>Community Support</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- Games Page -->
+    <section id="games-page" class="page">
+      <div class="section">
+        <h2>Browse Games</h2>
+        
+        <div class="filter-section">
+          <input type="text" id="search-input" placeholder="Search games..." class="search-bar">
+          <select id="category-filter" class="filter-dropdown">
+            <option value="">All Categories</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Puzzle">Puzzle</option>
+            <option value="Racing">Racing</option>
+            <option value="RPG">RPG</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div id="games-container" class="game-grid">
+          <!-- Games loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Asset Store Page -->
+    <section id="assets-page" class="page">
+      <div class="section">
+        <h2>Asset Store</h2>
+        <p class="subtitle">3D Models, Scripts, Sounds, and Textures for your games</p>
+        
+        <div id="assets-container" class="asset-grid">
+          <!-- Assets loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Create Game Page -->
+    <section id="create-page" class="page">
+      <div class="section">
+        <h2>Game Development Studio</h2>
+        
+        <div class="studio-container">
+          <div class="my-games-panel">
+            <h3>My Games</h3>
+            <button class="btn-primary" onclick="openGameCreationModal()">+ Create New Game</button>
+            <div id="my-games-list" class="games-list">
+              <!-- User's games loaded here -->
+            </div>
+          </div>
+
+          <div class="studio-tools">
+            <h3>Studio Tools</h3>
+            <div class="tools-grid">
+              <div class="tool-card" onclick="openToolModal('script')">
+                <span class="tool-icon">📝</span>
+                <h4>Script Editor</h4>
+                <p>Write and test Lua scripts</p>
+              </div>
+              <div class="tool-card" onclick="openToolModal('mesh')">
+                <span class="tool-icon">🎨</span>
+                <h4>Mesh Tools</h4>
+                <p>Create and import 3D models</p>
+              </div>
+              <div class="tool-card" onclick="openToolModal('physics')">
+                <span class="tool-icon">⚙️</span>
+                <h4>Physics Engine</h4>
+                <p>Configure game physics</p>
+              </div>
+              <div class="tool-card" onclick="openToolModal('sounds')">
+                <span class="tool-icon">🎵</span>
+                <h4>Sound Manager</h4>
+                <p>Add audio and music</p>
+              </div>
+              <div class="tool-card" onclick="openToolModal('ui')">
+                <span class="tool-icon">🖼️</span>
+                <h4>UI Designer</h4>
+                <p>Design game interfaces</p>
+              </div>
+              <div class="tool-card" onclick="openToolModal('publish')">
+                <span class="tool-icon">🚀</span>
+                <h4>Publish Game</h4>
+                <p>Deploy to platform</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Page -->
+    <section id="community-page" class="page">
+      <div class="section">
+        <h2>Community</h2>
+        
+        <div class="community-container">
+          <div class="social-feed">
+            <h3>Social Feed</h3>
+            <button class="btn-primary" onclick="openPostModal()">Create Post</button>
+            <div id="feed-container" class="posts-feed">
+              <!-- Posts loaded here -->
+            </div>
+          </div>
+
+          <div class="leaderboard-panel">
+            <h3>Leaderboard</h3>
+            <div id="leaderboard-container" class="leaderboard">
+              <!-- Leaderboard loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Detail Modal -->
+    <div id="game-detail-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('game-detail-modal')">&times;</span>
+        <div id="game-detail-content">
+          <!-- Game details loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+      <div class="modal-content modal-auth">
+        <span class="close" onclick="closeModal('auth-modal')">&times;</span>
+        <div class="auth-container">
+          <div class="auth-toggle">
+            <button class="toggle-btn active" onclick="switchAuthMode('login')">Login</button>
+            <button class="toggle-btn" onclick="switchAuthMode('register')">Sign Up</button>
+          </div>
+
+          <form id="login-form" class="auth-form active">
+            <h2>Welcome Back</h2>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn-primary full-width">Login</button>
+            <p class="auth-note">Demo: email@example.com / password123</p>
+          </form>
+
+          <form id="register-form" class="auth-form">
+            <h2>Create Account</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit" class="btn-primary full-width">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Creation Modal -->
+    <div id="game-creation-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('game-creation-modal')">&times;</span>
+        <h2>Create New Game</h2>
+        <form id="game-creation-form" class="creation-form">
+          <input type="text" id="game-title" placeholder="Game Title" required>
+          <textarea id="game-description" placeholder="Game Description" rows="4" required></textarea>
+          <select id="game-category" required>
+            <option value="">Select Category</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Puzzle">Puzzle</option>
+            <option value="Racing">Racing</option>
+            <option value="RPG">RPG</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Other">Other</option>
+          </select>
+          <label>
+            <input type="checkbox" id="game-public" checked> Public Game
+          </label>
+          <button type="submit" class="btn-primary">Create Game</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Post Modal -->
+    <div id="post-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('post-modal')">&times;</span>
+        <h2>Create Post</h2>
+        <form id="post-form" class="creation-form">
+          <textarea id="post-content" placeholder="What's on your mind?" rows="5" required></textarea>
+          <input type="text" id="post-image" placeholder="Image URL (optional)">
+          <button type="submit" class="btn-primary">Post</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tool Modal -->
+    <div id="tool-modal" class="modal">
+      <div class="modal-content tool-modal">
+        <span class="close" onclick="closeModal('tool-modal')">&times;</span>
+        <div id="tool-content">
+          <!-- Tool content loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('profile-modal')">&times;</span>
+        <div id="profile-content">
+          <!-- Profile loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
